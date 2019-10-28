@@ -28,7 +28,7 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-        
+        isOwnerOf(pet);
     }
 
     /**
@@ -45,11 +45,11 @@ public class PetOwner {
     public Boolean isOwnerOf(Pet pet) {
 
         for(int i = 0; i < pets.length; i++){
-            if(name.equals(pet.getOwner())){
-                return false;
+            if(pet.getOwner().equals(pets[i].getOwner())){
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     /**
